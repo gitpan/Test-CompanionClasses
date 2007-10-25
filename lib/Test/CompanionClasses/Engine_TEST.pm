@@ -7,7 +7,7 @@ use strict;
 use Test::More;
 
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 use base 'Test::CompanionClasses::Base';

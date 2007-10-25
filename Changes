@@ -1,5 +1,8 @@
 Revision history for Perl extension Test::CompanionClasses.
 
+0.02  Do Okt 25 22:23:31 CEST 2007
+        - Makefile.PL now requires Data::Inherited
+
 0.01  Do Okt 25 15:34:05 CEST 2007
         - original version
 

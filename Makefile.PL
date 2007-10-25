@@ -4,6 +4,7 @@ all_from 'lib/Test/CompanionClasses.pm';
 perl_version '5.006';
 
 requires 'Class::Accessor::Complex';
+requires 'Data::Inherited';
 requires 'UNIVERSAL::require';
 
 build_requires 'Test::More' => '0.70';
