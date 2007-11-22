@@ -1,8 +1,29 @@
-Revision history for Perl extension Test::CompanionClasses.
-
-0.02  Do Okt 25 22:23:31 CEST 2007
-        - Makefile.PL now requires Data::Inherited
-
-0.01  Do Okt 25 15:34:05 CEST 2007
-        - original version
-
+---
+global:
+  name: Test-CompanionClasses
+releases:
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - Converted Changes file to YAML style
+      - '.shipit: added Twitter step'
+      - 'Makefile.PL: added auto_install() and process_templates()'
+      - 'lib/*: converted to template'
+      - updated MANIFEST
+      - "Test::CompanionClasses::Base: make_real_object() now passes args to the real object's constructor"
+      - updated t/perlcriticrc
+    date: 2007-11-21T18:23:41Z
+    tags:
+      - NEWFEATURE
+    version: 0.03
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - Makefile.PL now requires Data::Inherited
+    date: 2007-10-25T22:23:31+02:00
+    tags: []
+    version: 0.02
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - original version
+    date: 2007-10-25T15:34:05+02:00
+    tags: []
+    version: 0.01

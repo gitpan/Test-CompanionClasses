@@ -8,7 +8,7 @@ use Test::More;
 use UNIVERSAL::require;
 
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 use base qw(
@@ -26,10 +26,10 @@ use constant PLAN => 0;    # default
 
 
 sub make_real_object {
-    my $self = shift;
+    my ($self, @args) = @_;
     $self->package->require;
     die $@ if $@;
-    $self->package->new;
+    $self->package->new(@args);
 }
 
 
@@ -53,6 +53,8 @@ sub planned_test_count {
 
 
 __END__
+
+
 
 =head1 NAME
 
@@ -81,21 +83,75 @@ Test::CompanionClasses::Base - base class for test companion classes
 Base class for test companion classes. Each test companion class should
 inherit from this class.
 
+The package() property is automatically set; it holds the package name of the
+class you are testing. If your test companion class is called C<My::Foo_TEST>,
+then C<package()> will return C<My::Foo>.
+
+Test::CompanionClasses::Base inherits from L<Class::Accessor::Complex> and
+L<Data::Inherited>.
+
+The superclass L<Class::Accessor::Complex> defines these methods and
+functions:
+
+    carp(), cluck(), croak(), flatten(), mk_abstract_accessors(),
+    mk_array_accessors(), mk_boolean_accessors(),
+    mk_class_array_accessors(), mk_class_hash_accessors(),
+    mk_class_scalar_accessors(), mk_concat_accessors(),
+    mk_forward_accessors(), mk_hash_accessors(), mk_integer_accessors(),
+    mk_new(), mk_object_accessors(), mk_scalar_accessors(),
+    mk_set_accessors(), mk_singleton()
+
+The superclass L<Class::Accessor> defines these methods and functions:
+
+    _carp(), _croak(), _mk_accessors(), accessor_name_for(),
+    best_practice_accessor_name_for(), best_practice_mutator_name_for(),
+    follow_best_practice(), get(), make_accessor(), make_ro_accessor(),
+    make_wo_accessor(), mk_accessors(), mk_ro_accessors(),
+    mk_wo_accessors(), mutator_name_for(), set()
+
+The superclass L<Class::Accessor::Installer> defines these methods and
+functions:
+
+    install_accessor(), subname()
+
+The superclass L<Data::Inherited> defines these methods and functions:
+
+    every_hash(), every_list(), flush_every_cache_by_key()
+
 =head1 METHODS
 
 =over 4
 
 =item new
 
-A constructor per L<Class::Accessor::Complex>'s C<mk_new()>.
+    my $obj = Test::CompanionClasses::Base->new;
+    my $obj = Test::CompanionClasses::Base->new(%args);
+
+Creates and returns a new object. The constructor will accept as arguments a
+list of pairs, from component name to initial value. For each pair, the named
+component is initialized by calling the method of the same name with the given
+value. If called with a single hash reference, it is dereferenced and its
+key/value pairs are set as described before.
+
+=item clear_package
+
+    $obj->clear_package;
+
+Clears the value.
 
 =item package
 
-Automatically set; holds the package name of the class you are testing. If
-your test companion class is called C<My::Foo_TEST>, then C<package()> will
-return C<My::Foo>.
+    my $value = $obj->package;
+    $obj->package($value);
 
-An accessor per L<Class::Accessor::Complex>'s C<mk_scalar_accessor()>.
+A basic getter/setter method. If called without an argument, it returns the
+value. If called with a single argument, it sets the value.
+
+=item package_clear
+
+    $obj->package_clear;
+
+Clears the value.
 
 =item PLAN
 
@@ -140,12 +196,16 @@ companion class' tests end the next ones' begin.
 If you talk about this module in blogs, on del.icio.us or anywhere else,
 please use the C<testcompanionclasses> tag.
 
+=head1 VERSION 
+                   
+This document describes version 0.03 of L<Test::CompanionClasses::Base>.
+
 =head1 BUGS AND LIMITATIONS
 
 No bugs have been reported.
 
 Please report any bugs or feature requests to
-C<bug-test-companionclasses@rt.cpan.org>, or through the web interface at
+C<<bug-test-companionclasses@rt.cpan.org>>, or through the web interface at
 L<http://rt.cpan.org>.
 
 =head1 INSTALLATION
@@ -168,6 +228,7 @@ Copyright 2007 by Marcel GrE<uuml>nauer
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
+
 
 =cut
 
