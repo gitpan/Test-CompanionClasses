@@ -8,7 +8,7 @@ use Test::More;
 use UNIVERSAL::require;
 
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 
 use base qw(
@@ -87,37 +87,6 @@ The package() property is automatically set; it holds the package name of the
 class you are testing. If your test companion class is called C<My::Foo_TEST>,
 then C<package()> will return C<My::Foo>.
 
-Test::CompanionClasses::Base inherits from L<Class::Accessor::Complex> and
-L<Data::Inherited>.
-
-The superclass L<Class::Accessor::Complex> defines these methods and
-functions:
-
-    carp(), cluck(), croak(), flatten(), mk_abstract_accessors(),
-    mk_array_accessors(), mk_boolean_accessors(),
-    mk_class_array_accessors(), mk_class_hash_accessors(),
-    mk_class_scalar_accessors(), mk_concat_accessors(),
-    mk_forward_accessors(), mk_hash_accessors(), mk_integer_accessors(),
-    mk_new(), mk_object_accessors(), mk_scalar_accessors(),
-    mk_set_accessors(), mk_singleton()
-
-The superclass L<Class::Accessor> defines these methods and functions:
-
-    _carp(), _croak(), _mk_accessors(), accessor_name_for(),
-    best_practice_accessor_name_for(), best_practice_mutator_name_for(),
-    follow_best_practice(), get(), make_accessor(), make_ro_accessor(),
-    make_wo_accessor(), mk_accessors(), mk_ro_accessors(),
-    mk_wo_accessors(), mutator_name_for(), set()
-
-The superclass L<Class::Accessor::Installer> defines these methods and
-functions:
-
-    install_accessor(), subname()
-
-The superclass L<Data::Inherited> defines these methods and functions:
-
-    every_hash(), every_list(), flush_every_cache_by_key()
-
 =head1 METHODS
 
 =over 4
@@ -191,6 +160,36 @@ companion class' tests end the next ones' begin.
 
 =back
 
+Test::CompanionClasses::Base inherits from L<Class::Accessor::Complex> and
+L<Data::Inherited>.
+
+The superclass L<Class::Accessor::Complex> defines these methods and
+functions:
+
+    mk_abstract_accessors(), mk_array_accessors(), mk_boolean_accessors(),
+    mk_class_array_accessors(), mk_class_hash_accessors(),
+    mk_class_scalar_accessors(), mk_concat_accessors(),
+    mk_forward_accessors(), mk_hash_accessors(), mk_integer_accessors(),
+    mk_new(), mk_object_accessors(), mk_scalar_accessors(),
+    mk_set_accessors(), mk_singleton()
+
+The superclass L<Class::Accessor> defines these methods and functions:
+
+    _carp(), _croak(), _mk_accessors(), accessor_name_for(),
+    best_practice_accessor_name_for(), best_practice_mutator_name_for(),
+    follow_best_practice(), get(), make_accessor(), make_ro_accessor(),
+    make_wo_accessor(), mk_accessors(), mk_ro_accessors(),
+    mk_wo_accessors(), mutator_name_for(), set()
+
+The superclass L<Class::Accessor::Installer> defines these methods and
+functions:
+
+    install_accessor()
+
+The superclass L<Data::Inherited> defines these methods and functions:
+
+    every_hash(), every_list(), flush_every_cache_by_key()
+
 =head1 TAGS
 
 If you talk about this module in blogs, on del.icio.us or anywhere else,
@@ -198,7 +197,7 @@ please use the C<testcompanionclasses> tag.
 
 =head1 VERSION 
                    
-This document describes version 0.03 of L<Test::CompanionClasses::Base>.
+This document describes version 0.04 of L<Test::CompanionClasses::Base>.
 
 =head1 BUGS AND LIMITATIONS
 
@@ -224,7 +223,7 @@ Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007 by Marcel GrE<uuml>nauer
+Copyright 2007-2008 by Marcel GrE<uuml>nauer
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

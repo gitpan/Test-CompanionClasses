@@ -10,7 +10,7 @@ use Test::More;
 use UNIVERSAL::require;
 
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 
 use base 'Class::Accessor::Complex';
@@ -122,32 +122,6 @@ Test::CompanionClasses::Engine - run tests defined in companion classes
 
 This is the core of C<Test::CompanionClasses>.
 
-Test::CompanionClasses::Engine inherits from L<Class::Accessor::Complex>.
-
-The superclass L<Class::Accessor::Complex> defines these methods and
-functions:
-
-    carp(), cluck(), croak(), flatten(), mk_abstract_accessors(),
-    mk_array_accessors(), mk_boolean_accessors(),
-    mk_class_array_accessors(), mk_class_hash_accessors(),
-    mk_class_scalar_accessors(), mk_concat_accessors(),
-    mk_forward_accessors(), mk_hash_accessors(), mk_integer_accessors(),
-    mk_new(), mk_object_accessors(), mk_scalar_accessors(),
-    mk_set_accessors(), mk_singleton()
-
-The superclass L<Class::Accessor> defines these methods and functions:
-
-    _carp(), _croak(), _mk_accessors(), accessor_name_for(),
-    best_practice_accessor_name_for(), best_practice_mutator_name_for(),
-    follow_best_practice(), get(), make_accessor(), make_ro_accessor(),
-    make_wo_accessor(), mk_accessors(), mk_ro_accessors(),
-    mk_wo_accessors(), mutator_name_for(), set()
-
-The superclass L<Class::Accessor::Installer> defines these methods and
-functions:
-
-    install_accessor(), subname()
-
 =head1 METHODS
 
 =over 4
@@ -220,6 +194,31 @@ whether they still work with your distribution.
 
 =back
 
+Test::CompanionClasses::Engine inherits from L<Class::Accessor::Complex>.
+
+The superclass L<Class::Accessor::Complex> defines these methods and
+functions:
+
+    mk_abstract_accessors(), mk_array_accessors(), mk_boolean_accessors(),
+    mk_class_array_accessors(), mk_class_hash_accessors(),
+    mk_class_scalar_accessors(), mk_concat_accessors(),
+    mk_forward_accessors(), mk_hash_accessors(), mk_integer_accessors(),
+    mk_new(), mk_object_accessors(), mk_scalar_accessors(),
+    mk_set_accessors(), mk_singleton()
+
+The superclass L<Class::Accessor> defines these methods and functions:
+
+    _carp(), _croak(), _mk_accessors(), accessor_name_for(),
+    best_practice_accessor_name_for(), best_practice_mutator_name_for(),
+    follow_best_practice(), get(), make_accessor(), make_ro_accessor(),
+    make_wo_accessor(), mk_accessors(), mk_ro_accessors(),
+    mk_wo_accessors(), mutator_name_for(), set()
+
+The superclass L<Class::Accessor::Installer> defines these methods and
+functions:
+
+    install_accessor()
+
 The method looks for test companion classes in C<lib> and via C<inherited>,
 loads them, asks them for their plan, that is,  how many tests they want
 to run, then runs them.
@@ -233,7 +232,7 @@ please use the C<testcompanionclasses> tag.
 
 =head1 VERSION 
                    
-This document describes version 0.03 of L<Test::CompanionClasses::Engine>.
+This document describes version 0.04 of L<Test::CompanionClasses::Engine>.
 
 =head1 BUGS AND LIMITATIONS
 
@@ -259,7 +258,7 @@ Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007 by Marcel GrE<uuml>nauer
+Copyright 2007-2008 by Marcel GrE<uuml>nauer
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

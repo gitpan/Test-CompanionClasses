@@ -7,7 +7,7 @@ use strict;
 use Test::More;
 
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 
 use base 'Test::CompanionClasses::Base';
@@ -44,6 +44,14 @@ None; this is part of C<Test::CompanionClasses> tests.
 Test companion class that is used to perform very basic tests on
 L<Test::CompanionClasses> itself.
 
+=head1 METHODS
+
+=over 4
+
+
+
+=back
+
 Test::CompanionClasses::Engine_TEST inherits from
 L<Test::CompanionClasses::Base>.
 
@@ -56,8 +64,7 @@ functions:
 The superclass L<Class::Accessor::Complex> defines these methods and
 functions:
 
-    carp(), cluck(), croak(), flatten(), mk_abstract_accessors(),
-    mk_array_accessors(), mk_boolean_accessors(),
+    mk_abstract_accessors(), mk_array_accessors(), mk_boolean_accessors(),
     mk_class_array_accessors(), mk_class_hash_accessors(),
     mk_class_scalar_accessors(), mk_concat_accessors(),
     mk_forward_accessors(), mk_hash_accessors(), mk_integer_accessors(),
@@ -75,19 +82,11 @@ The superclass L<Class::Accessor> defines these methods and functions:
 The superclass L<Class::Accessor::Installer> defines these methods and
 functions:
 
-    install_accessor(), subname()
+    install_accessor()
 
 The superclass L<Data::Inherited> defines these methods and functions:
 
     every_hash(), every_list(), flush_every_cache_by_key()
-
-=head1 METHODS
-
-=over 4
-
-
-
-=back
 
 =head1 TAGS
 
@@ -96,7 +95,7 @@ please use the C<testcompanionclasses> tag.
 
 =head1 VERSION 
                    
-This document describes version 0.03 of L<Test::CompanionClasses::Engine_TEST>.
+This document describes version 0.04 of L<Test::CompanionClasses::Engine_TEST>.
 
 =head1 BUGS AND LIMITATIONS
 
@@ -122,7 +121,7 @@ Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007 by Marcel GrE<uuml>nauer
+Copyright 2007-2008 by Marcel GrE<uuml>nauer
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
