@@ -1,52 +1,40 @@
 package Test::CompanionClasses;
-
+use 5.006;
 use warnings;
 use strict;
 use Test::CompanionClasses::Engine;
 use Getopt::Long;
-
-
 use base 'Exporter';
-
-
-our $VERSION = '0.04';
-
-
-our @EXPORT = ('run_tests');
-
+our $VERSION = '0.05';
+our @EXPORT  = ('run_tests');
 
 sub run_tests {
     my $exact;
-    GetOptions(exact => \$exact) or
-        die "usage: $0 [ --exact ] filter...\n";
-
+    GetOptions(exact => \$exact)
+      or die "usage: $0 [ --exact ] filter...\n";
     Test::CompanionClasses::Engine->new->run_tests(
-        exact     => $exact,
-        filter    => [ @main::ARGV ],
+        exact  => $exact,
+        filter => [@main::ARGV],
+
         # inherited => [ $inherited_spec ],
     );
 }
-
-
-
+1;
 __END__
-
-
 
 =head1 NAME
 
-Test::CompanionClasses - basic invocation of Test::CompanionClasses::Engine
+Test::CompanionClasses - Basic invocation of Test::CompanionClasses::Engine
 
 =head1 SYNOPSIS
 
-Define a test file, for example C<t/01_companion_classes.t>:
+    # Define a test file, for example C<t/01_companion_classes.t>:
 
     use Test::CompanionClasses;
     run_tests;
 
-Then you can do:
-
-    perl t/01_companion_classes.t --exact Foo::Bar Baz
+    # Then you can do:
+    # perl t/01_companion_classes.t --exact Foo::Bar Baz
 
 =head1 DESCRIPTION
 
@@ -73,21 +61,22 @@ Again, see L<Test::CompanionClasses::Engine> for details.
 
 The C<inherited> mechanism is not supported (yet).
 
-=head1 TAGS
+=head1 METHODS
 
-If you talk about this module in blogs, on del.icio.us or anywhere else,
-please use the C<testcompanionclasses> tag.
+=over 4
 
-=head1 VERSION 
-                   
-This document describes version 0.04 of L<Test::CompanionClasses>.
+=item C<run_tests>
+
+Parses the command-line options, then calls the C<run_tests()> method of
+L<Test::CompanionClasses::Engine>.
+
+=back
 
 =head1 BUGS AND LIMITATIONS
 
 No bugs have been reported.
 
-Please report any bugs or feature requests to
-C<<bug-test-companionclasses@rt.cpan.org>>, or through the web interface at
+Please report any bugs or feature requests through the web interface at
 L<http://rt.cpan.org>.
 
 =head1 INSTALLATION
@@ -98,7 +87,12 @@ See perlmodinstall for information and options on installing Perl modules.
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+site near you. Or see L<http://search.cpan.org/dist/Test-CompanionClasses/>.
+
+The development version lives at
+L<http://github.com/hanekomu/test-companionclasses>. Instead of sending
+patches, please fork this project using the standard git and github
+infrastructure.
 
 =head1 AUTHOR
 
@@ -106,11 +100,9 @@ Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007-2008 by Marcel GrE<uuml>nauer
+Copyright 2007-2009 by Marcel GrE<uuml>nauer.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
-
 =cut
-

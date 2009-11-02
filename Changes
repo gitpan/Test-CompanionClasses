@@ -1,36 +1,30 @@
----
-global:
-  name: Test-CompanionClasses
-releases:
-  - author: 'Marcel Gruenauer <marcel@cpan.org>'
-    changes:
-      - set the version to 0.04
-      - moved generated documentation of interited methods to after documentation of this class' methods so the manpage is more readable
-    date: 2008-01-31T16:02:02Z
-    tags: []
-    version: 0.04
-  - author: 'Marcel Gruenauer <marcel@cpan.org>'
-    changes:
-      - Converted Changes file to YAML style
-      - '.shipit: added Twitter step'
-      - 'Makefile.PL: added auto_install() and process_templates()'
-      - 'lib/*: converted to template'
-      - updated MANIFEST
-      - "Test::CompanionClasses::Base: make_real_object() now passes args to the real object's constructor"
-      - updated t/perlcriticrc
-    date: 2007-11-21T18:23:41Z
-    tags:
-      - NEWFEATURE
-    version: 0.03
-  - author: 'Marcel Gruenauer <marcel@cpan.org>'
-    changes:
-      - Makefile.PL now requires Data::Inherited
-    date: 2007-10-25T22:23:31+02:00
-    tags: []
-    version: 0.02
-  - author: 'Marcel Gruenauer <marcel@cpan.org>'
-    changes:
-      - original version
-    date: 2007-10-25T15:34:05+02:00
-    tags: []
-    version: 0.01
+Revision history for Perl extension Test-CompanionClasses
+
+0.05  Mon 2009.11.02 19:38:28 CET (Marcel Gruenauer <marcel@cpan.org>)
+     - Changed dist style and Changes back to standard. People didn't like it -
+       the nail that sticks out gets hammered down.
+     - Added standard test files; this will also help with CPANTS.
+     - Use Test::More's subtest feature - this greatly simplified the engine.
+
+0.04  Thu, 29 May 2008 12:08:27 -0000 (Marcel Gruenauer <marcel@cpan.org>)
+     - set the version to 0.04
+     - moved generated documentation of interited methods to after
+       documentation of this class' methods so the manpage is more readable
+     - .shipit: fixed svk.tagpattern
+
+0.03  Wed, 21 Nov 2007 18:23:41 -0000 (Marcel Gruenauer <marcel@cpan.org>)
+     - Converted Changes file to YAML style
+     - .shipit: added Twitter step
+     - Makefile.PL: added auto_install() and process_templates()
+     - lib/*: converted to template
+     - updated MANIFEST
+     - Test::CompanionClasses::Base: make_real_object() now passes args to the
+       real object's constructor
+     - updated t/perlcriticrc
+     - tags: NEWFEATURE
+
+0.02  Thu, 25 Oct 2007 22:23:31 +0200 (Marcel Gruenauer <marcel@cpan.org>)
+     - Makefile.PL now requires Data::Inherited
+
+0.01  Thu, 25 Oct 2007 15:34:05 +0200 (Marcel Gruenauer <marcel@cpan.org>)
+     - original version
