@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Test::More;
 use UNIVERSAL::require;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 use base qw(
   Class::Accessor::Complex
   Data::Inherited
@@ -121,7 +121,7 @@ hierarchy, to determine how many tests will be run in total.
 
 =item C<make_real_object>
 
-Loads the actual class being tested (cf. C<package()>) and returns an object
+Loads the actual class being tested (see C<package()>) and returns an object
 of this class (constructed by calling C<new()> on it).
 
 In your test companion class you will want to test certain assumptions about

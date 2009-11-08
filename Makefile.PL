@@ -10,7 +10,7 @@ auto_set_repository;
 requires 'Class::Accessor::Complex';
 requires 'Data::Inherited';
 requires 'UNIVERSAL::require';
-test_requires 'Test::More' => '0.70';
+requires 'Test::More' => '0.94';
 extra_tests;
 author_requires 'ShipIt';
 author_requires 'ShipIt::Step::DistClean';

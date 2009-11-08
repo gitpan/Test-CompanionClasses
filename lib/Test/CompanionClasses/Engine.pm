@@ -5,7 +5,7 @@ use FindBin '$Bin';
 use File::Find;
 use Test::More;
 use UNIVERSAL::require;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 use base 'Class::Accessor::Complex';
 __PACKAGE__->mk_new;
 

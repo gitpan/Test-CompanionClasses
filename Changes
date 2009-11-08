@@ -1,5 +1,8 @@
 Revision history for Perl extension Test-CompanionClasses
 
+0.06  Mon 2009.11.02 19:38:28 CET (Marcel Gruenauer <marcel@cpan.org>)
+     - subtest() requires Test::More 0.94 (thanks ANDK)
+
 0.05  Mon 2009.11.02 19:38:28 CET (Marcel Gruenauer <marcel@cpan.org>)
      - Changed dist style and Changes back to standard. People didn't like it -
        the nail that sticks out gets hammered down.

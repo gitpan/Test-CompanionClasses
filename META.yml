@@ -4,7 +4,6 @@ author:
   - 'Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>'
 build_requires:
   ExtUtils::MakeMaker: 6.42
-  Test::More: 0.70
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
@@ -22,6 +21,7 @@ no_index:
 requires:
   Class::Accessor::Complex: 0
   Data::Inherited: 0
+  Test::More: 0.94
   UNIVERSAL::require: 0
   perl: 5.6.0
 resources:
@@ -29,4 +29,4 @@ resources:
   homepage: http://search.cpan.org/dist/Test-CompanionClasses/
   license: http://dev.perl.org/licenses/
   repository: git://github.com/hanekomu/test-companionclasses.git
-version: 0.05
+version: 0.06

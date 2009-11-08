@@ -18,7 +18,6 @@ inc/Module/Install/Repository.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 inc/Pod/Markdown.pm
-inc/Test/More.pm
 INSTALL
 lib/Test/CompanionClasses.pm
 lib/Test/CompanionClasses/Base.pm
