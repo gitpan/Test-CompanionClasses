@@ -1,9 +1,10 @@
-This is the Perl module Test::CompanionClasses.
+
+This is the Perl distribution Test-CompanionClasses.
 
 ## Installation
 
-Test::CompanionClasses installation is straightforward. If your CPAN shell is
-set up, you should just be able to do
+Test-CompanionClasses installation is straightforward.
+If your CPAN shell is set up, you should just be able to do
 
     % cpan Test::CompanionClasses
 
@@ -18,10 +19,9 @@ Then install it:
 
 ## Documentation
 
-Test::CompanionClasses documentation is available as in POD. So you can do:
+Test-CompanionClasses documentation is available as in POD.
+So you can do:
 
     % perldoc Test::CompanionClasses
 
-to read the documentation online with your favorite pager.
-
-Marcel Gruenauer
+to read the documentation with your favorite pager.

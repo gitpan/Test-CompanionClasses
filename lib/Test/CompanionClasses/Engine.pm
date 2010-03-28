@@ -1,12 +1,15 @@
-package Test::CompanionClasses::Engine;
-use warnings;
+use 5.008;
 use strict;
+use warnings;
+
+package Test::CompanionClasses::Engine;
+our $VERSION = '1.100870';
+# ABSTRACT: Run tests defined in companion classes
 use FindBin '$Bin';
 use File::Find;
 use Test::More;
 use UNIVERSAL::require;
-our $VERSION = '0.06';
-use base 'Class::Accessor::Complex';
+use parent 'Class::Accessor::Complex';
 __PACKAGE__->mk_new;
 
 sub run_tests {
@@ -50,13 +53,18 @@ sub run_tests {
     }
 }
 1;
+
+
 __END__
-
-
+=pod
 
 =head1 NAME
 
-Test::CompanionClasses::Engine - run tests defined in companion classes
+Test::CompanionClasses::Engine - Run tests defined in companion classes
+
+=head1 VERSION
+
+version 1.100870
 
 =head1 SYNOPSIS
 
@@ -69,20 +77,7 @@ This is the core of C<Test::CompanionClasses>.
 
 =head1 METHODS
 
-=over 4
-
-=item C<new>
-
-    my $obj = Test::CompanionClasses::Engine->new;
-    my $obj = Test::CompanionClasses::Engine->new(%args);
-
-Creates and returns a new object. The constructor will accept as arguments a
-list of pairs, from component name to initial value. For each pair, the named
-component is initialized by calling the method of the same name with the given
-value. If called with a single hash reference, it is dereferenced and its
-key/value pairs are set as described before.
-
-=item C<run_tests>
+=head2 run_tests
 
 Actually runs the companion class tests.
 
@@ -139,39 +134,39 @@ whether they still work with your distribution.
 
 =back
 
-=back
+=head1 INSTALLATION
+
+See perlmodinstall for information and options on installing Perl modules.
 
 =head1 BUGS AND LIMITATIONS
 
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org>.
-
-=head1 INSTALLATION
-
-See perlmodinstall for information and options on installing Perl modules.
+L<http://rt.cpan.org/Public/Dist/Display.html?Name=Test-CompanionClasses>.
 
 =head1 AVAILABILITY
 
 The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see L<http://search.cpan.org/dist/Test-CompanionClasses/>.
+Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
+site near you, or see
+L<http://search.cpan.org/dist/Test-CompanionClasses/>.
 
 The development version lives at
-L<http://github.com/hanekomu/test-companionclasses>. Instead of sending
-patches, please fork this project using the standard git and github
-infrastructure.
+L<http://github.com/hanekomu/Test-CompanionClasses/>.
+Instead of sending patches, please fork this project using the standard git
+and github infrastructure.
 
 =head1 AUTHOR
 
-Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
+  Marcel Gruenauer <marcel@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007-2009 by Marcel GrE<uuml>nauer.
+This software is copyright (c) 2007 by Marcel Gruenauer.
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
+

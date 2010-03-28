@@ -1,32 +1,47 @@
 ---
-abstract: 'Basic invocation of Test::CompanionClasses::Engine'
+abstract: 'Basic invocation of the test companion class engine'
 author:
-  - 'Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>'
-build_requires:
-  ExtUtils::MakeMaker: 6.42
+  - 'Marcel Gruenauer <marcel@cpan.org>'
+build_requires: {}
 configure_requires:
-  ExtUtils::MakeMaker: 6.42
-distribution_type: module
-generated_by: 'Module::Install version 0.91'
+  ExtUtils::MakeMaker: 6.11
+generated_by: 'Dist::Zilla version 1.100711'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Test-CompanionClasses
-no_index:
-  directory:
-    - inc
-    - t
-    - xt
+provides:
+  Test::CompanionClasses:
+    file: lib/Test/CompanionClasses.pm
+    version: 1.100870
+  Test::CompanionClasses::Base:
+    file: lib/Test/CompanionClasses/Base.pm
+    version: 1.100870
+  Test::CompanionClasses::Engine:
+    file: lib/Test/CompanionClasses/Engine.pm
+    version: 1.100870
+  Test::CompanionClasses::Engine_TEST:
+    file: lib/Test/CompanionClasses/Engine_TEST.pm
+    version: 1.100870
 requires:
+  Carp: 0
   Class::Accessor::Complex: 0
   Data::Inherited: 0
-  Test::More: 0.94
+  English: 0
+  Exporter: 0
+  File::Find: 0
+  File::Temp: 0
+  FindBin: 0
+  Getopt::Long: 0
+  Scalar::Util: 0
+  Test::More: 0.88
   UNIVERSAL::require: 0
-  perl: 5.6.0
+  constant: 0
+  parent: 0
+  perl: 5.008
 resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Test-CompanionClasses
   homepage: http://search.cpan.org/dist/Test-CompanionClasses/
-  license: http://dev.perl.org/licenses/
-  repository: git://github.com/hanekomu/test-companionclasses.git
-version: 0.06
+  repository: http://github.com/hanekomu/Test-CompanionClasses
+version: 1.100870
