@@ -1,9 +1,8 @@
 NAME
-    Test::CompanionClasses - Basic invocation of the test companion class
-    engine
+    Test::CompanionClasses - Run tests defined in companion classes
 
 VERSION
-    version 1.100870
+    version 1.101370
 
 SYNOPSIS
         # Define a test file, for example C<t/01_companion_classes.t>:
@@ -24,6 +23,13 @@ METHODS
   run_tests
     Parses the command-line options, then calls the "run_tests()" method of
     Test::CompanionClasses::Engine.
+
+    You might want to make sure that the companion tests work when run
+    individually as well. In that case you might use something like this:
+
+        find lib/ -name \*_TEST.pm | \
+            xargs ack -ho '(?<=^package )([\w:]+)(?=_TEST)' | \
+            xargs -i{} perl t/01_companion_classes.t --exact {}
 
 COMMAND-LINE USAGE
     The following command-line arguments are supported:

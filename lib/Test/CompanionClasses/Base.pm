@@ -3,7 +3,9 @@ use strict;
 use warnings;
 
 package Test::CompanionClasses::Base;
-our $VERSION = '1.100870';
+BEGIN {
+  $Test::CompanionClasses::Base::VERSION = '1.101370';
+}
 # ABSTRACT: Base class for test companion classes
 use Test::More;
 use UNIVERSAL::require;
@@ -45,7 +47,7 @@ Test::CompanionClasses::Base - Base class for test companion classes
 
 =head1 VERSION
 
-version 1.100870
+version 1.101370
 
 =head1 SYNOPSIS
 

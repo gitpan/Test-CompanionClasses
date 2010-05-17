@@ -1,12 +1,15 @@
-package Test::CompanionClasses;
-# ABSTRACT: Basic invocation of the test companion class engine
-use 5.006;
-use warnings;
+use 5.008;
 use strict;
+use warnings;
+
+package Test::CompanionClasses;
+BEGIN {
+  $Test::CompanionClasses::VERSION = '1.101370';
+}
+# ABSTRACT: Run tests defined in companion classes
 use Test::CompanionClasses::Engine;
 use Getopt::Long;
 use Exporter qw(import);
-our $VERSION = '0.06';
 our @EXPORT  = ('run_tests');
 
 sub run_tests {
@@ -28,11 +31,11 @@ __END__
 
 =head1 NAME
 
-Test::CompanionClasses - Basic invocation of the test companion class engine
+Test::CompanionClasses - Run tests defined in companion classes
 
 =head1 VERSION
 
-version 1.100870
+version 1.101370
 
 =head1 SYNOPSIS
 
@@ -57,6 +60,13 @@ The intention is that you use it as shown in the L</SYNOPSIS>.
 
 Parses the command-line options, then calls the C<run_tests()> method of
 L<Test::CompanionClasses::Engine>.
+
+You might want to make sure that the companion tests work when run
+individually as well. In that case you might use something like this:
+
+    find lib/ -name \*_TEST.pm | \
+        xargs ack -ho '(?<=^package )([\w:]+)(?=_TEST)' | \
+        xargs -i{} perl t/01_companion_classes.t --exact {}
 
 =head1 COMMAND-LINE USAGE
 

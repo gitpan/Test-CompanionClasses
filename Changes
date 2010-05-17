@@ -1,5 +1,9 @@
 Revision history for Perl extension Test-CompanionClasses
 
+1.101370  2010-05-17 17:44:41 Europe/Vienna
+    - remove manually set versions
+    - show example command to run companion tests individually
+
 1.100870  2010-03-28 12:14:51 Europe/Vienna
     - converted the distribution to Dist::Zilla-style
 

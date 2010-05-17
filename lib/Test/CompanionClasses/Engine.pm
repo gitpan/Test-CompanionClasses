@@ -3,7 +3,9 @@ use strict;
 use warnings;
 
 package Test::CompanionClasses::Engine;
-our $VERSION = '1.100870';
+BEGIN {
+  $Test::CompanionClasses::Engine::VERSION = '1.101370';
+}
 # ABSTRACT: Run tests defined in companion classes
 use FindBin '$Bin';
 use File::Find;
@@ -64,7 +66,7 @@ Test::CompanionClasses::Engine - Run tests defined in companion classes
 
 =head1 VERSION
 
-version 1.100870
+version 1.101370
 
 =head1 SYNOPSIS
 

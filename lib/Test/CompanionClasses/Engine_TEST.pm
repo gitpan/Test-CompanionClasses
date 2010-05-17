@@ -1,9 +1,13 @@
-package Test::CompanionClasses::Engine_TEST;
-# ABSTRACT: Test companion class for the test companion class engine
-use warnings;
+use 5.008;
 use strict;
+use warnings;
+
+package Test::CompanionClasses::Engine_TEST;
+BEGIN {
+  $Test::CompanionClasses::Engine_TEST::VERSION = '1.101370';
+}
+# ABSTRACT: Test companion class for the test companion class engine
 use Test::More;
-our $VERSION = '0.06';
 use parent 'Test::CompanionClasses::Base';
 use constant PLAN => 1;
 
@@ -25,7 +29,7 @@ Test::CompanionClasses::Engine_TEST - Test companion class for the test companio
 
 =head1 VERSION
 
-version 1.100870
+version 1.101370
 
 =head1 DESCRIPTION
 
